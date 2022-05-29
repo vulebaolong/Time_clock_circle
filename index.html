@@ -10,35 +10,38 @@
 </head>
 
 <body>
-    <div class="clock_time" >
-        <div class="clock_circle" style="--clr:#ff2972;">
-            <div class="dots hr_dot"></div>
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="hh"></circle>
-            </svg>
-            <div class="clock_hours">00</div>
-        </div>
-        <div class="clock_circle" style="--clr:#fee800;">
-            <div class="dots min_dot"></div>
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="mm"></circle>
-            </svg>
-            <div class="clock_minutes">00</div>
-        </div>
-        <div class="clock_circle" style="--clr:#04fc43;">
-            <div class="dots sec_dot"></div>
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="ss"></circle>
-            </svg>
-            <div class="clock_seconds">00</div>
-        </div>
-        <div class="ap">
-            <div class="ampm">AM</div>
+    <div class="container">
+        <div class="clock_time" >
+            <div class="clock_circle" style="--clr:#ff2972;">
+                <div class="dots hr_dot"></div>
+                <svg>
+                    <circle cx="26" cy="26" r="26"></circle>
+                    <circle cx="26" cy="26" r="26" id="hh"></circle>
+                </svg>
+                <div class="clock_hours">00</div>
+            </div>
+            <div class="clock_circle" style="--clr:#fee800;">
+                <div class="dots min_dot"></div>
+                <svg>
+                    <circle cx="26" cy="26" r="26"></circle>
+                    <circle cx="26" cy="26" r="26" id="mm"></circle>
+                </svg>
+                <div class="clock_minutes">00</div>
+            </div>
+            <div class="clock_circle" style="--clr:#04fc43;">
+                <div class="dots sec_dot"></div>
+                <svg>
+                    <circle cx="26" cy="26" r="26"></circle>
+                    <circle cx="26" cy="26" r="26" id="ss"></circle>
+                </svg>
+                <div class="clock_seconds">00</div>
+            </div>
+            <div class="ap">
+                <div class="ampm">AM</div>
+            </div>
         </div>
     </div>
+    
 
     <script>
         setInterval(() => {
@@ -64,14 +67,14 @@
             m = (m < 10) ? "0" + m : m
             s = (s < 10) ? "0" + s : s
 
-            el_hours.innerHTML = h + "<br><span>HOURS</span>"
-            el_minutes.innerHTML = m + "<br><span>MINUTES</span>"
-            el_seconds.innerHTML = s + "<br><span>SECOND</span>"
+            el_hours.innerHTML = h + "<br><span>hh</span>"
+            el_minutes.innerHTML = m + "<br><span>mm</span>"
+            el_seconds.innerHTML = s + "<br><span>ss</span>"
             el_ampm.innerHTML = am
 
-            hh.style.strokeDashoffset = 440 - (440 * h) / 24
-            mm.style.strokeDashoffset = 440 - (440 * m) / 60
-            ss.style.strokeDashoffset = 440 - (440 * s) / 60
+            hh.style.strokeDashoffset = 165 - (165 * h) / 24
+            mm.style.strokeDashoffset = 165 - (165 * m) / 60
+            ss.style.strokeDashoffset = 165 - (165 * s) / 60
 
             hr_dot.style.transform = `rotate(${h * 15}deg)`
             min_dot.style.transform = `rotate(${m * 6}deg)`
